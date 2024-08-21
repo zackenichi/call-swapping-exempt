@@ -14,6 +14,7 @@ In this example, the CallRail number swapping script dynamically changes phone n
 
 2. **Override Functionality:**
    - After the CallRail number swapping script runs, a custom script overrides the swapped number specifically for elements with the `text` class, ensuring they display a static number for texting purposes.
+   - CallRail's actual number swap algorithm may cause a number swap again so as a response, we will repeatedly run the code one that happens.
 
 ## Demo
 

@@ -47,7 +47,7 @@
         <p>This is the hero section. We provide top-notch services that cater to your needs.</p>
         <div class="buttons-container">
             <a class="button call" href="#">Call Now</a>
-            <a class="button text" href="#">Text Now</a>
+            <a class="button text text-me" href="sms:+1111-1111-1111">Text Now</a>
             <a class="button book" href="#contact">Book Now</a>
         </div>
     </section>
@@ -56,7 +56,7 @@
         <p>Meet our dedicated team of professionals who are here to serve you with excellence.</p>
         <div class="buttons-container">
             <a class="button call" href="#">Call Now</a>
-            <a class="button text" href="#">Text Now</a>
+            <a class="button text text-me" href="sms:+1111-1111-1111">Text Now</a>
             <a class="button book" href="#contact">Book Now</a>
         </div>
     </section>
@@ -65,7 +65,7 @@
         <p>We offer a range of services designed to meet your specific needs and preferences.</p>
         <div class="buttons-container">
             <a class="button call" href="#">Call Now</a>
-            <a class="button text" href="#">Text Now</a>
+            <a class="button text text-me" href="sms:+1111-1111-1111">Text Now</a>
             <a class="button book" href="#contact">Book Now</a>
         </div>
     </section>
@@ -79,31 +79,15 @@
         </form>
         <div class="buttons-container">
             <a class="button call" href="#">Call Now</a>
-            <a class="button text" href="#">Text Now</a>
+            <a class="button text text-me" href="sms:+1111-1111-1111">Text Now</a>
             <a class="button book" href="#">Book Now</a>
         </div>
     </section>
 
-    <!-- Override script to set specific number for text buttons -->
-    <script>
-        // Ensure the script runs after CallRailSwapping is complete
-        document.addEventListener('DOMContentLoaded', function () {
-            function OverrideTextButtonNumbers() {
-                // const specificTextNumber = '919-380-9311';
-                const specificTextNumber = '919-111-1111';
+    <script src="overrideTextButtons.js"></script>
 
-                const formattedTextNumber = specificTextNumber.replace(/[^0-9]/g, ''); // Remove non-numeric characters
 
-                document.querySelectorAll('.button.text').forEach(button => {
-                    button.href = `sms:${formattedTextNumber}`;
-                    button.textContent = `Text Now: ${specificTextNumber}`;
-                });
-            }
-            console.log('OverrideTextButtonNumbers is called');
-            // Delay to ensure CallRailSwapping has completed
-            setTimeout(OverrideTextButtonNumbers, 100); // Adjust delay as needed
-        });
-    </script>
+
 </body>
 
 </html>
