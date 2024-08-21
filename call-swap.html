@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Simulated CallRailSwapping function
+        function CallRailSwapping() {
+            console.log('CallRailSwapping is called');
+            const phoneNumbers = [
+                '+1-800-123-4567',
+                '+1-800-234-5678',
+                '+1-800-345-6789',
+                '+1-800-456-7890',
+                '+1-800-567-8901'
+            ];
+            const randomIndex = Math.floor(Math.random() * phoneNumbers.length);
+            const phoneNumber = phoneNumbers[randomIndex];
+            document.getElementById('phone-number').textContent = phoneNumber;
+
+            const formattedPhoneNumber = phoneNumber.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+
+            // Update call button links and texts
+            document.querySelectorAll('.button.call').forEach(button => {
+                button.href = `tel:${formattedPhoneNumber}`;
+                button.textContent = `Call Now: ${phoneNumber}`;
+            });
+        }
+
+        // Ensure CallRailSwapping function is called when DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            CallRailSwapping();
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>My Sample Website</h1>
+        <p id="phone-number">+1-800-123-4567</p>
+    </header>
+    <section id="hero">
+        <h2>Welcome to Our Site</h2>
+        <p>This is the hero section. We provide top-notch services that cater to your needs.</p>
+        <div class="buttons-container">
+            <a class="button call" href="#">Call Now</a>
+            <a class="button text" href="#">Text Now</a>
+            <a class="button book" href="#contact">Book Now</a>
+        </div>
+    </section>
+    <section id="about-team">
+        <h2>About the Team</h2>
+        <p>Meet our dedicated team of professionals who are here to serve you with excellence.</p>
+        <div class="buttons-container">
+            <a class="button call" href="#">Call Now</a>
+            <a class="button text" href="#">Text Now</a>
+            <a class="button book" href="#contact">Book Now</a>
+        </div>
+    </section>
+    <section id="about-services">
+        <h2>About Our Services</h2>
+        <p>We offer a range of services designed to meet your specific needs and preferences.</p>
+        <div class="buttons-container">
+            <a class="button call" href="#">Call Now</a>
+            <a class="button text" href="#">Text Now</a>
+            <a class="button book" href="#contact">Book Now</a>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="buttons-container">
+            <a class="button call" href="#">Call Now</a>
+            <a class="button text" href="#">Text Now</a>
+            <a class="button book" href="#">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Override script to set specific number for text buttons -->
+    <script>
+        // Ensure the script runs after CallRailSwapping is complete
+        document.addEventListener('DOMContentLoaded', function () {
+            function OverrideTextButtonNumbers() {
+                const specificTextNumber = '919-380-9311';
+                const formattedTextNumber = specificTextNumber.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+
+                document.querySelectorAll('.button.text').forEach(button => {
+                    button.href = `sms:${formattedTextNumber}`;
+                    button.textContent = `Text Now: ${specificTextNumber}`;
+                });
+            }
+            console.log('OverrideTextButtonNumbers is called');
+            // Delay to ensure CallRailSwapping has completed
+            setTimeout(OverrideTextButtonNumbers, 100); // Adjust delay as needed
+        });
+    </script>
+</body>
+
+</html>
