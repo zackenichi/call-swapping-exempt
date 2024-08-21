@@ -13,7 +13,7 @@ In this example, the CallRail number swapping script dynamically changes phone n
    - The project simulates the behavior of the CallRail number swapping process by randomly selecting a number from a predefined list and applying it to all elements with the `call` and `text` classes.
 
 2. **Override Functionality:**
-   - After the CallRail number swapping script runs, a custom script overrides the swapped number specifically for elements with the `text` class, ensuring they display a static number (`919-380-9311`) for texting purposes.
+   - After the CallRail number swapping script runs, a custom script overrides the swapped number specifically for elements with the `text` class, ensuring they display a static number for texting purposes.
 
 ## Demo
 
